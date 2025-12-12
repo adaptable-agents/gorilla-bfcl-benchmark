@@ -117,6 +117,7 @@ completion = openai.ChatCompletion.create(
 
 - 📊 **Evaluation & Benchmarking**
   - [Berkeley Function Calling Leaderboard](/berkeley-function-call-leaderboard/README.md): Compare function calling capabilities
+  - **GLM with Adaptable Agents**: Simply run `./berkeley-function-call-leaderboard/run_glm_adaptable_eval.sh` to evaluate GLM models with Adaptable Agents on the Berkeley Function Calling Leaderboard
   - [Agent Arena](/agent-arena/README.md): Evaluate agent workflows
   - [Gorilla Paper Evaluation Scripts](/gorilla/eval/README.md): Run your own evaluations
 

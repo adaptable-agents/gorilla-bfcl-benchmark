@@ -9,6 +9,7 @@ from bfcl_eval.model_handler.api_inference.fireworks import FireworksHandler
 from bfcl_eval.model_handler.api_inference.functionary import FunctionaryHandler
 from bfcl_eval.model_handler.api_inference.gemini import GeminiHandler
 from bfcl_eval.model_handler.api_inference.glm import GLMAPIHandler
+from bfcl_eval.model_handler.api_inference.glm_adaptable import GLMAdaptableHandler
 from bfcl_eval.model_handler.api_inference.gogoagent import GoGoAgentHandler
 from bfcl_eval.model_handler.api_inference.gorilla import GorillaHandler
 from bfcl_eval.model_handler.api_inference.grok import GrokHandler
@@ -76,7 +77,7 @@ from bfcl_eval.model_handler.local_inference.think_agent import ThinkAgentHandle
 @dataclass
 class ModelConfig:
     """
-    Model configuration class for storing model metadata and settings. 
+    Model configuration class for storing model metadata and settings.
 
     Attributes:
         model_name (str): Name of the model as used in the vendor API or on Hugging Face (may not be unique).
@@ -1092,6 +1093,30 @@ api_inference_model_map = {
         org="Zhipu AI",
         license="MIT",
         model_handler=GLMAPIHandler,
+        input_price=None,
+        output_price=None,
+        is_fc_model=True,
+        underscore_to_dot=True,
+    ),
+    "glm-4.5-adaptable-FC": ModelConfig(
+        model_name="glm-4.5",
+        display_name="GLM-4.5-Adaptable (FC)",
+        url="https://api.z.ai/api/paas/v4/",
+        org="Zhipu AI",
+        license="MIT",
+        model_handler=GLMAdaptableHandler,
+        input_price=None,
+        output_price=None,
+        is_fc_model=True,
+        underscore_to_dot=True,
+    ),
+    "glm-4.5-air-adaptable-FC": ModelConfig(
+        model_name="glm-4.5-air",
+        display_name="GLM-4.5-Air-Adaptable (FC)",
+        url="https://api.z.ai/api/paas/v4/",
+        org="Zhipu AI",
+        license="MIT",
+        model_handler=GLMAdaptableHandler,
         input_price=None,
         output_price=None,
         is_fc_model=True,
